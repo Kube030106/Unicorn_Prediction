@@ -39,8 +39,8 @@ venv.bak/
 .idea/
 
 # Artifacts & Models
-artifacts/
-*.pkl
+# artifacts/
+# *.pkl
 *.joblib
 *.model
 
