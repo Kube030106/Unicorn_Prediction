@@ -60,32 +60,64 @@ def predict_startup(input_data: dict):
 # -----------------------------
 # Example usage
 # -----------------------------
+# Success Scenario
+# sample_startup = {
+#     "funding_rounds": 4,
+#     "funding_total_usd": 120_000_000,
+#     "milestones": 6,
+#     "age_first_funding_year": 1.2,
+#     "age_last_funding_year": 4.5,
+#     "relationships": 10,
+#     "avg_participants": 3,
+#     "has_VC": 1,
+#     "has_angel": 1,
+#     "has_roundA": 1,
+#     "has_roundB": 1,
+#     "has_roundC": 0,
+#     "has_roundD": 0,
+#     "is_CA": 0,
+#     "is_NY": 0,
+#     "is_MA": 0,
+#     "is_TX": 0,
+#     "is_software": 1,
+#     "is_web": 0,
+#     "is_mobile": 1,
+#     "is_enterprise": 0,
+#     "is_ecommerce": 0,
+#     "is_biotech": 0,
+#     "is_consulting": 0
+# }
+# Failure Scenario
 sample_startup = {
-    "funding_rounds": 4,
-    "funding_total_usd": 120_000_000,
-    "milestones": 6,
-    "age_first_funding_year": 1.2,
-    "age_last_funding_year": 4.5,
-    "relationships": 10,
-    "avg_participants": 3,
-    "has_VC": 1,
+    "funding_rounds": 1,
+    "funding_total_usd": 300_000,      # Very low funding
+    "milestones": 1,
+    "age_first_funding_year": 4.5,     # Very slow first funding
+    "age_last_funding_year": 5.0,
+    "relationships": 1,
+    "avg_participants": 1,
+
+    "has_VC": 0,
     "has_angel": 1,
-    "has_roundA": 1,
-    "has_roundB": 1,
+    "has_roundA": 0,
+    "has_roundB": 0,
     "has_roundC": 0,
     "has_roundD": 0,
+
     "is_CA": 0,
     "is_NY": 0,
     "is_MA": 0,
     "is_TX": 0,
-    "is_software": 1,
-    "is_web": 0,
-    "is_mobile": 1,
+
+    "is_software": 0,
+    "is_web": 1,
+    "is_mobile": 0,
     "is_enterprise": 0,
     "is_ecommerce": 0,
     "is_biotech": 0,
-    "is_consulting": 0
+    "is_consulting": 1
 }
+
 
 result = predict_startup(sample_startup)
 print(result)
